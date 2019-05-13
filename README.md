@@ -41,4 +41,4 @@ See end of the [Requirements document](Requirements.md) for more info.
 - [x] Add variable sellIn
 - [x] Add variable newQuality
 - [x] Add variable newSellIn
-- [ ] Add variable for name item
+- [x] Add variable for name item
