@@ -24,9 +24,9 @@ public class GeneralSteps {
         gildedRose = new GildedRose(inventory);
     }
 
-    @Given("^an item with quality (\\d+) and sell by date (\\d+)$")
-    public void anItemWithQualityAndSellByDate(int quality, int sellIn) {
-        currentItem = new Item(SOME_NAME, sellIn, quality);
+    @Given("^an item \"([^\"]*)\" with quality (\\d+) and sell by date (\\d+)$")
+    public void anItemWithQualityAndSellByDate(String name, int quality, int sellIn) {
+        currentItem = new Item(name, sellIn, quality);
         inventory.addItem(currentItem);
     }
 

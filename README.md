@@ -40,5 +40,5 @@ See end of the [Requirements document](Requirements.md) for more info.
 - [x] Change parsing on today and tomorrow to numbers
 - [x] Add variable sellIn
 - [x] Add variable newQuality
-- [ ] Add variable newSellIn
+- [x] Add variable newSellIn
 - [ ] Add variable for name item
