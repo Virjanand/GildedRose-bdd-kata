@@ -23,25 +23,25 @@ public class GeneralSteps {
         gildedRose = new GildedRose(inventory);
     }
 
-    @Given("^an item \"([^\"]*)\" with quality (\\d+) and sell by date (\\d+)$")
+    @Given("^an item \"([^\"]*)\" with quality (-?\\d+) and sell by date (-?\\d+)$")
     public void anItemWithQualityAndSellByDate(String name, int quality, int sellIn) {
         currentItem = new Item(name, sellIn, quality);
         inventory.addItem(currentItem);
     }
 
-    @When("^(\\d+) day passed$")
+    @When("^(-?\\d+) day passed$")
     public void dayPassed(int days) {
         for (int n = 0; n < days; n++) {
             gildedRose.updateQuality();
         }
     }
 
-    @Then("^the item has quality (\\d+)$")
+    @Then("^the item has quality (-?\\d+)$")
     public void theItemHasQuality(int quality) {
         assertEquals(quality, currentItem.quality);
     }
 
-    @And("^the item has sell by date (\\d+)$")
+    @And("^the item has sell by date (-?\\d+)$")
     public void theItemHasSellByDate(int sellIn) {
         assertEquals(sellIn, currentItem.sellIn);
     }

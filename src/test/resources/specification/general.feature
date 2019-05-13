@@ -10,3 +10,4 @@ Feature: Track quality and sellIn of inventory items
     | name | quality | sellIn | newQuality | newSellIn |
     | "Regular item" | 10 | 1 | 9 | 0 |
     | "Regular item" | 0 | 1 | 0 | 0 |
+    | "Regular item" | 3 | 0 | 1 | -1 |
