@@ -35,5 +35,5 @@ See end of the [Requirements document](Requirements.md) for more info.
 # ToDo
 - [x] Setup project with Git
 - [x] Build with Maven
-- [ ] Expand Cucumber test with table and variables
+- [x] Expand Cucumber test with table and variables
 - [ ] Write down Specification by Example steps and results
