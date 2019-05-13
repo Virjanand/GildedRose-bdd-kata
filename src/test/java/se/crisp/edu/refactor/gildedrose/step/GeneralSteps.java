@@ -13,7 +13,6 @@ import static org.junit.Assert.assertEquals;
 
 public class GeneralSteps {
 
-    private static final String SOME_NAME = "some name";
     private GildedRose gildedRose;
     private Inventory inventory;
     private Item currentItem;

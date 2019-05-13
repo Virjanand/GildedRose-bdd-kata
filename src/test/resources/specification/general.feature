@@ -8,4 +8,5 @@ Feature: Track quality and sellIn of inventory items
 
     Examples:
     | name | quality | sellIn | newQuality | newSellIn |
-    | "some item" | 10 | 1 | 9 | 0 |
+    | "Regular item" | 10 | 1 | 9 | 0 |
+    | "Regular item" | 0 | 1 | 0 | 0 |

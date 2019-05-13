@@ -42,3 +42,5 @@ See end of the [Requirements document](Requirements.md) for more info.
 - [x] Add variable newQuality
 - [x] Add variable newSellIn
 - [x] Add variable for name item
+- [x] Add scenario for regular item quality 0, sell in 1 gives quality 0, sell in 0
+- [ ] Add scenario after sellIn passed quality decreases twice as fast
