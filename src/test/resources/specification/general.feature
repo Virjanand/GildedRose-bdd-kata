@@ -4,8 +4,8 @@ Feature: Track quality and sellIn of inventory items
     Given an item with quality <quality> and sell by date <sellIn>
     When 1 day passed
     Then the item has quality <newQuality>
-    And the item has sell by date 0
+    And the item has sell by date <newSellIn>
 
     Examples:
-    | quality | sellIn | newQuality |
-    | 10 | 1 | 9 |
+    | quality | sellIn | newQuality | newSellIn |
+    | 10 | 1 | 9 | 0 |
