@@ -37,3 +37,8 @@ See end of the [Requirements document](Requirements.md) for more info.
 - [x] Build with Maven
 - [x] Expand Cucumber test with table and variables
 - [ ] Write down Specification by Example steps and results
+- [x] Change parsing on today and tomorrow to numbers
+- [ ] Add variable sellIn
+- [ ] Add variable newQuality
+- [ ] Add variable newSellIn
+- [ ] Add variable for name item

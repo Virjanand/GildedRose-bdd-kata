@@ -24,42 +24,27 @@ public class GeneralSteps {
         gildedRose = new GildedRose(inventory);
     }
 
-    @Given("^an item with quality (\\d+) and sell by date (.*)")
-    public void anItemWithQualityAndSellByDate(int quality, String relativeDay) throws Throwable {
-        currentItem = new Item(SOME_NAME, parseRelativeDay(relativeDay), quality);
+    @Given("^an item with quality (\\d+) and sell by date (\\d+)$")
+    public void anItemWithQualityAndSellByDate(int quality, int sellIn) {
+        currentItem = new Item(SOME_NAME, sellIn, quality);
         inventory.addItem(currentItem);
     }
 
     @When("^(\\d+) day passed$")
-    public void dayPassed(int days) throws Throwable {
+    public void dayPassed(int days) {
         for (int n = 0; n < days; n++) {
             gildedRose.updateQuality();
         }
     }
 
     @Then("^the item has quality (\\d+)$")
-    public void theItemHasQuality(int quality) throws Throwable {
+    public void theItemHasQuality(int quality) {
         assertEquals(quality, currentItem.quality);
     }
 
-    @And("^the item has sell by date (.*)")
-    public void theItemHasSellByDate(String relativeDay) throws Throwable {
-        assertEquals(parseRelativeDay(relativeDay), currentItem.sellIn);
+    @And("^the item has sell by date (\\d+)$")
+    public void theItemHasSellByDate(int sellIn) {
+        assertEquals(sellIn, currentItem.sellIn);
     }
-
-
-    private int parseRelativeDay(String relativeDay) {
-        if (relativeDay.equalsIgnoreCase("yesterday")) {
-            return -1;
-        }
-        if (relativeDay.equalsIgnoreCase("today")) {
-            return 0;
-        }
-        if (relativeDay.equalsIgnoreCase("tomorrow")) {
-            return 1;
-        }
-        throw new IllegalArgumentException(relativeDay + " is not understood.");
-    }
-
 }
 
