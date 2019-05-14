@@ -16,6 +16,7 @@ public class GeneralSteps {
     private GildedRose gildedRose;
     private Inventory inventory;
     private Item currentItem;
+    private String description;
 
     @Before
     public void beforeAll() {
@@ -23,10 +24,11 @@ public class GeneralSteps {
         gildedRose = new GildedRose(inventory);
     }
 
-    @Given("^an item \"([^\"]*)\" with quality (-?\\d+) and sell by date (-?\\d+)$")
-    public void anItemWithQualityAndSellByDate(String name, int quality, int sellIn) {
+    @Given("^an item \"([^\"]*)\" with quality (-?\\d+) and sell by date (-?\\d+) according to (.*)$")
+    public void anItemWithQualityAndSellByDate(String name, int quality, int sellIn, String description) {
         currentItem = new Item(name, sellIn, quality);
         inventory.addItem(currentItem);
+        this.description = description;
     }
 
     @When("^(-?\\d+) day passed$")
@@ -38,12 +40,12 @@ public class GeneralSteps {
 
     @Then("^the item has quality (-?\\d+)$")
     public void theItemHasQuality(int quality) {
-        assertEquals(quality, currentItem.quality);
+        assertEquals(description, quality, currentItem.quality);
     }
 
     @And("^the item has sell by date (-?\\d+)$")
     public void theItemHasSellByDate(int sellIn) {
-        assertEquals(sellIn, currentItem.sellIn);
+        assertEquals(description, sellIn, currentItem.sellIn);
     }
 }
 
